@@ -6,12 +6,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./css/style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <script src="./js/script.js" defer></script>
   <title>Frontend Mentor | Interactive rating component</title>
 </head>
 <body>
   <main>
-    <!-- Rating state start -->
-     <div class="modal modal__container" role="alertdialog">
+     <div id="modal-form" class="modal modal__container" role="alertdialog">
       <div class="modal__round-container star-icon">
         <svg width="17" height="16" xmlns="http://www.w3.org/2000/svg">
           <path d="m9.067.43 1.99 4.031c.112.228.33.386.58.422l4.45.647a.772.772 0 0 1 .427 1.316l-3.22 3.138a.773.773 0 0 0-.222.683l.76 4.431a.772.772 0 0 1-1.12.813l-3.98-2.092a.773.773 0 0 0-.718 0l-3.98 2.092a.772.772 0 0 1-1.119-.813l.76-4.431a.77.77 0 0 0-.222-.683L.233 6.846A.772.772 0 0 1 .661 5.53l4.449-.647a.772.772 0 0 0 .58-.422L7.68.43a.774.774 0 0 1 1.387 0Z" fill="#FC7614"/>
@@ -25,14 +25,14 @@
           Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!
         </p>
       </section>
-      <form class="modal__form modal__container">
+      <form id="form-rating" class="modal__form modal__container">
         <div class="modal__form-radio-group" role="radiogroup">
           <div class="modal__form-radio-button">
-            <input type="radio" name="rating" id="value-1" value="1">
+            <input type="radio" name="rating" id="value-1" value="1"required>
             <label class="modal__round-container" for="value-1">1</label>
           </div>
           <div class="modal__form-radio-button">
-            <input type="radio" name="rating" id="value-2" value="2">
+            <input type="radio" name="rating" id="value-2" value="2" required>
             <label class="modal__round-container modal__form-label-2" for="value-2">2</label>
           </div>
           <div class="modal__form-radio-button">
@@ -40,11 +40,11 @@
             <label class="modal__round-container" for="value-3">3</label>
           </div>
           <div class="modal__form-radio-button">
-            <input type="radio" name="rating" id="value-4" value="4">
+            <input type="radio" name="rating" id="value-4" value="4" required>
             <label class="modal__round-container" for="value-4">4</label>
           </div>
           <div class="modal__form-radio-button">
-            <input type="radio" name="rating" id="value-5" value="5">
+            <input type="radio" name="rating" id="value-5" value="5" required>
             <label class="modal__round-container" for="value-5">5</label>
           </div>
         </div>
@@ -53,9 +53,7 @@
         </div>
       </form>
      </div>
-    <!-- Rating state end -->
-    <!-- Thank you state start -->
-     <div class="modal modal--disabled  modal__container modal__container--center" role="alert">
+     <div id="form-success" class="modal modal__container modal__container--disabled modal__container--clickable modal__container--center" role="alert">
       <div class=" modal__container modal__container--center">
         <svg width="162" height="108" xmlns="http://www.w3.org/2000/svg">
           <g fill="none">
@@ -79,7 +77,7 @@
             <path d="M73.731 35.75a.537.537 0 0 1-.038-1.076c.113 0 11.343-.828 17.363-.29a.54.54 0 0 1-.096 1.076c-5.908-.538-17.079.274-17.186.285l-.043.005Zm-.891 7.279a.538.538 0 0 1-.038-1.076c.113 0 11.342-.828 17.363-.29a.54.54 0 0 1-.097 1.076c-5.907-.538-17.073.28-17.185.285l-.043.005Zm-.102 7.564a.538.538 0 0 1-.043-1.076c.112 0 11.347-.829 17.362-.29a.54.54 0 0 1-.096 1.075c-5.908-.538-17.073.28-17.186.286l-.037.005Zm-.715 7.564a.537.537 0 0 1-.037-1.076c.112 0 11.342-.829 17.362-.285a.54.54 0 0 1-.096 1.076c-5.908-.538-17.073.28-17.186.285h-.043Z" fill="#FFF"/>
           </g>
         </svg>
-        <p class="modal__text modal__text--orange modal__result-rating">You selected <span>#</span> out of 5</p>
+        <p class="modal__text modal__text--orange modal__result-rating">You selected <span id="rating-result">#</span> out of 5</p>
       </div>
       <section class="modal__container modal__container--center">
         <header>
@@ -90,7 +88,6 @@
         </p>
       </section>
      </div>
-    <!-- Thank you state end -->
   </main>
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 

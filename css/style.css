@@ -57,13 +57,9 @@ main {
     gap: var(--spacing-16);
 }
 
-.modal--disabled {
-    display: none;
-}
-
-.modal__container--center {
-    align-items: center;
-}
+.modal__container--disabled { display: none; }
+.modal__container--clickable { cursor: pointer; }
+.modal__container--center { align-items: center; }
 
 .modal__round-container {
     display: flex;
