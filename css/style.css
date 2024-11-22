@@ -4,15 +4,17 @@
     --orange: #fb7413;
     --white: #ffffff;
     --light-grey: #959eac;
-    --light-grey-15: hsla(217, 12%, 63%, 0.15);
+    --light-grey-15: #959eac26;
     --dark-blue: #252d37;
+    --background: linear-gradient(0deg, #1a1e25 15%, var(--dark-blue) 64%);
     --very-dark-blue: #121417;
     --min-modal-size: 327px;
     --max-modal-size: 412px;
     --font-base: 15px;
+    --font-24-28: clamp(1.6rem, 1.5061rem + 0.3756vw, 1.8666rem);
     --spacing-16: 1.06rem;
     --spacing-24: 1.6rem;
-    --circular-box: 2.7rem;
+    --circular-box: 3.5rem;
 }
 
 * {
@@ -29,20 +31,16 @@ html {
 }
 
 main {
-    width: 100%;
-    min-height: 100vh;
-}
-
-
-main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    min-height: 100vh;
 }
 
 .modal {
-    background-color: var(--dark-blue);
+    background: var(--background);
     min-width: var(--min-modal-size);
     max-width: var(--max-modal-size);
     padding: var(--spacing-24);
@@ -54,7 +52,7 @@ main {
 .modal__container {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-16);
+    gap: var(--spacing-24);
 }
 
 .modal__container--disabled { display: none; }
@@ -94,6 +92,7 @@ main {
 }
 
 .modal__title { 
+    font-size: var(--font-24-28);
     font-weight: 700;
     color: var(--white); 
 }
